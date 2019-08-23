@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>DULUTH LOVES LOCAL</ion-card-title>
+          <ion-card-subtitle>WE LOOK FORWARD TO HEARING FROM YOU!</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+            <img src="/assets/img/lake_superior.jpeg" alt="Shores of Lake Superior" />
+            We are Duluth locals who have a passion for Duluth, Minnesota! We aim to celebrate the small businesses in Duluth that make this city such a great place to work, visit and raise a family. We love to hear from you all and we want everyone to be a part of the local movement.
+        </ion-card-content>  
+      </ion-card>
+      
+      <ion-card style="background-color: gray">
+        <ion-card-subtitle style="color: gray">  .  </ion-card-subtitle>
+        <ion-item>
+            <ion-item>
+              <a href="https://www.facebook.com/duluthloveslocal/"><ion-icon name="logo-facebook" slot="start" style="color: gray; margin-right: 2%;"></ion-icon></a>
+            </ion-item>
+            <ion-item>
+              <a href="https://www.youtube.com/channel/UC3cEtNmUlDBZ6JXxsFQ4X3w"><ion-icon name="logo-youtube" slot="start" style="color: gray;"></ion-icon></a>
+            </ion-item>
+            <ion-item>
+              <a href="https://www.instagram.com/duluthloveslocal/?hl=en"><ion-icon name="logo-instagram" slot="start" style="color: gray;"></ion-icon></a>
+            </ion-item>
+            <ion-item>
+              <a href="https://twitter.com/duluthloves?lang=en"><ion-icon name="logo-twitter" slot="start" style="color: gray;"></ion-icon></a>
+            </ion-item>
+        </ion-item>
+      </ion-card>
+      
+      <ion-card>
+        <ion-item>
+          <ion-icon name="map" slot="start"></ion-icon>
+          <ion-label>PO Box 3444 <br> Duluth, MN  55803</ion-label>
+        </ion-item>
+      
+        <ion-item href="mailto:hello@duluthloveslocal.com">
+          <ion-icon name="mail" slot="start"></ion-icon>
+          <ion-label>hello@duluthloveslocal.com</ion-label>
+        </ion-item>
+      
+        <ion-item class="activated">
+          <ion-icon name="call" slot="start"></ion-icon>
+          <ion-label>1-218-464-6355</ion-label>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-card-subtitle style="text-align: center;">Subscribe to Our Monthly Newsletter</ion-card-subtitle>
+        <ion-item>
+          <ion-label>Email: </ion-label>
+          <ion-input type="email"></ion-input>
+          <ion-button size="small" (click)="addEmail()">Submit</ion-button>
+        </ion-item>
+      </ion-card>
+      <img src="/assets/img/duluth_loves_local_logo_dark.png" alt="" />
+</ion-content>
+<!--Need to connect the email to a database (mongoDB) to store the email addresses and state "This email is already subscribed to our monthly newsletter."-->

@@ -1,0 +1,7 @@
+{
+  "name": "dllApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

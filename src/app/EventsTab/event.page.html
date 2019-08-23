@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Events
+    </ion-title>
+    <!--may need to be deleted
+  <ion-col text-end>
+    <ion-button (click)="loadMap()" shape="round" fill="outline">
+      <ion-icon slot="start" name="locate"></ion-icon>
+      Where I Am
+    </ion-button>
+  </ion-col>
+  may need to be deleted-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--Winter Village-->
+  <ion-card>
+    <ion-card-title style="text-align: center;">Duluth Winter Village</ion-card-title>
+    <img src="/assets/img/winter_village.jpeg" alt="Duluth Winter Village" style="width: 50%; margin-left: auto; margin-right: auto;" />
+    <ion-card-subtitle style="text-align: center;">December 1st & 2nd</ion-card-subtitle>
+    <ion-card-content>
+     <p>Come experience a winter wonderland at this years Duluth Winter Village. Bring your family and friends to shop from local vendors.</p>
+    </ion-card-content>
+<!--This is for the google map-->
+    <div class="map-wrapper">
+      <div id="map_center">
+          <a href="https://goo.gl/maps/6yt5i8PQtgAikBQ46"><ion-icon name="pin" style="color:rgb(236, 69, 69);"></ion-icon></a>
+      </div>
+      <div #map id="map"></div>
+    </div>
+    <a href="https://goo.gl/maps/6yt5i8PQtgAikBQ46"><ion-card-subtitle style="text-align: center;">Glensheen Mansion <br>3300 London Rd, Duluth, MN 55804</ion-card-subtitle></a>
+    <div id="address">
+      <!--<span>{{address}}</span>-->
+    </div>
+  </ion-card>
+  <!--All Pints-->
+  <ion-card>
+      <ion-card-title style="text-align: center;">All Pints North</ion-card-title>
+      <img src="/assets/img/all_pints.png" alt="All Pints North" style="width: 50%; margin-left: auto; margin-right: auto;" />
+      <ion-card-subtitle style="text-align: center;">July 27th</ion-card-subtitle>
+      <ion-card-content>
+       <p>Join the brewers of Minnesota by the shores of Lake Superior at Bayfront Festival Park in Duluth, and celebrate craft beer 2oz at a time! All Pints North will feature beer from breweries around the region, live music and tasty food in an iconic setting. All Pints North Summer Brew Fest takes place rain or shine. All attendees must be 21+ years of age and must present their valid 21+ ID at the gate. Please sample responsibly and plan ahead for transportation.</p>
+      </ion-card-content>
+      <div class="map-wrapper">
+          <div id="map_center">
+              <a href="https://goo.gl/maps/QgG8BwDT2vbDjUvs6"><ion-icon name="pin" style="color:rgb(236, 69, 69);"></ion-icon></a>
+          </div>
+          <div #map2 id="map"></div>
+        </div>
+        <a href="https://goo.gl/maps/QgG8BwDT2vbDjUvs6"><ion-card-subtitle style="text-align: center;">Bayfront Festival Park <br>350 Harbor Dr, Duluth, MN 55802</ion-card-subtitle></a>
+  </ion-card>
+<!--All Pints Eve-->
+<ion-card>
+    <ion-card-title style="text-align: center;">All Pints Eve</ion-card-title>
+    <img src="/assets/img/Sir-Bens-All-Pints-Eve-2019.jpg" alt="All Pints Eve" style="width: 50%; margin-left: auto; margin-right: auto;" />
+    <ion-card-subtitle style="text-align: center;">July 26th</ion-card-subtitle>
+    <ion-card-content>
+     <p>The fourth annual All Pints North pre-party in the Sir Ben’s parking lot features live music by the Fish Heads, Mackie Brothers, the Velvets and the Crunchy Bunch. There will be specialty beers available from 20 breweries, plus outdoor food by the Rambler and Crank & Dasher and kombucha by Duluth Kombucha. Free parking is available in the St. Luke’s lot adjacent to Sir Ben’s.</p>
+    </ion-card-content>
+<!--This is for the google map-->
+    <div class="map-wrapper">
+      <div id="map_center">
+          <a href="https://goo.gl/maps/kt4dRsjjmgpksiiYA"><ion-icon name="pin" style="color:rgb(236, 69, 69);"></ion-icon></a>
+      </div>
+      <div #map3 id="map"></div>
+    </div>
+    <a href="https://goo.gl/maps/kt4dRsjjmgpksiiYA"><ion-card-subtitle style="text-align: center;">Sir Benedicts Tavern on the Lake <br>805 E Superior St, Duluth, MN 55802</ion-card-subtitle></a>
+    <div id="address">
+      <!--<span>{{address}}</span>-->
+    </div>
+  </ion-card>
+  <!--Bentleyville-->
+  <ion-card>
+      <ion-card-title style="text-align: center;">All Pints North</ion-card-title>
+      <img src="/assets/img/duluth_bentleyville.jpg" alt="Bentleyville" style="width: 50%; margin-left: auto; margin-right: auto;" />
+      <ion-card-subtitle style="text-align: center;">November 23rd - December 28th</ion-card-subtitle>
+      <ion-card-content>
+       <p>Billed as America’s Largest Free Walk Through Lighting Display, Bentleyville invites guests to stroll under the glow of over 5 million lights in a 20-acre park situated on the shores of Lake Superior, while enjoying complimentary hot cocoa, cookies, popcorn and roasted marshmallows! 
+          Get your photo taken with reindeer, visit with Santa to share your Christmas wishes (kids 10 and under will receive a new knit hat after visiting with Santa) Mrs. Claus will also be at Bentleyville to tell stories and hand out candy canes!</p>
+      </ion-card-content>
+      <div class="map-wrapper">
+          <div id="map_center">
+              <a href="https://goo.gl/maps/HxedBM8os48awbri8"><ion-icon name="pin" style="color:rgb(236, 69, 69);"></ion-icon></a>
+          </div>
+          <div #map4 id="map"></div>
+        </div>
+        <a href="https://goo.gl/maps/HxedBM8os48awbri8"><ion-card-subtitle style="text-align: center;">Bentleyville Tour of Lights<br>704 W Railroad St, Duluth, MN 55802</ion-card-subtitle></a>
+  </ion-card>
+  <!--Grandmas Marathon-->
+  <ion-card>
+      <ion-card-title style="text-align: center;">Grandma's Marathon</ion-card-title>
+      <img src="/assets/img/Grandmas-Marathon-Logo.png" alt="Grandma's Marathon" style="width: 50%; margin-left: auto; margin-right: auto;" />
+      <ion-card-subtitle style="text-align: center;">June 20th</ion-card-subtitle>
+      <ion-card-content>
+       <p>Grandma's Marathon is an annual road race held each June in Duluth, Minnesota, in the United States. The course runs point-to-point from the city of Two Harbors on Scenic Route 61 and continues along Lake Superior into the city of Duluth. If you are not a runner, being a spectator is a great way to get involved in the Grandma’s Marathon weekend festivities, without having to run 26.2 miles.</p>
+      </ion-card-content>
+  <!--This is for the google map-->
+      <div class="map-wrapper">
+        <div id="map_center">
+            <a href="https://goo.gl/maps/fa9ZDW2o4umhuCcy7"><ion-icon name="pin" style="color:rgb(236, 69, 69);"></ion-icon></a>
+        </div>
+        <div #map5 id="map"></div>
+      </div>
+      <a href="https://goo.gl/maps/fa9ZDW2o4umhuCcy7"><ion-card-subtitle style="text-align: center;">Grandma's Marathon Finish Line <br>Canal Park Dr & Buchanan Duluth, MN 55802</ion-card-subtitle></a>
+      <div id="address">
+        <!--<span>{{address}}</span>-->
+      </div>
+    </ion-card>
+    <!--Park Point Rummage Sale-->
+    <ion-card>
+        <ion-card-title style="text-align: center;">Park Point Rummage Sale</ion-card-title>
+        <img src="/assets/img/park_point.jpg" alt="Park Point" style="width: 50%; margin-left: auto; margin-right: auto;" />
+        <ion-card-subtitle style="text-align: center;">June 14th - 15th</ion-card-subtitle>
+        <ion-card-content>
+         <p>4 miles and approx 125 yards of Bargains. Food available throughout the event. Just cross the Aerial Lift Bridge to Park Point and start your shopping adventure. Plenty of free parking on both sides of the street. </p>
+        </ion-card-content>
+        <div class="map-wrapper">
+            <div id="map_center">
+                <a href="https://goo.gl/maps/vRrK7MFDzMgHQhuo9"><ion-icon name="pin" style="color:rgb(236, 69, 69);"></ion-icon></a>
+            </div>
+            <div #map6 id="map"></div>
+          </div>
+          <a href="https://goo.gl/maps/vRrK7MFDzMgHQhuo9"><ion-card-subtitle style="text-align: center;">Park Point Rummage Sale <br>Lake Ave S & 08 St</ion-card-subtitle></a>
+    </ion-card>
+</ion-content>
