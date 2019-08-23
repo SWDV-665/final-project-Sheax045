@@ -1,0 +1,158 @@
+
+
+# Create item
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"name":"Bread","quantity":"2"}' \
+  http://localhost:8080/api/groceries
+
+  # Create item
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"email":"test@yahoo.com"}' \
+  http://localhost:8080/api/dll
+
+  curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"email":"test2@yahoo.com"}' \
+  http://localhost:8080/api/dll
+
+# Update item
+curl --header "Content-Type: application/json" \
+  --request PUT \
+  --data '{"name":"Bread","quantity":"4"}' \
+  http://localhost:8080/api/groceries/{id}  
+
+
+ # Update item
+curl --header "Content-Type: application/json" \
+  --request DELETE \
+  http://localhost:8080/api/groceries/{id}   
+
+
+  # Update item
+curl --header "Content-Type: application/json" \
+  --request DELETE \
+  http://localhost:8080/api/dll/{5d603a0e3cf248a5d0de9285}  
+
+  curl --header "Content-Type: application/json" \
+  --request DELETE \
+  http://localhost:8080/api/dll/{5d603aabfa93f0a734ed18bf}  
+
+  ******************* Need to check the path of /api/dll/ as that could be the problem ***********************
+
+
+
+  // Set up
+var express = require('express');
+var app = express();
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+var cors = require('cors');
+
+// Configuration
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/dll");
+
+app.use(bodyParser.urlencoded({'extended': 'true'}));
+app.use(bodyParser.json());
+app.use(bodyParser.json({type: 'application/vnd.api+json'}));
+app.use(methodOverride());
+app.use(cors());
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'DELETE, POST, PUT');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+// Model
+var Dll = mongoose.model('Dll', {
+    email: String
+});
+
+
+// Get all email addresses 
+app.get('/api/dll', function (req, res) {
+
+    console.log("Listing email addresses...");
+
+    //use mongoose to get all email addresses in the database
+    Dll.find(function (err, dll) {
+
+        // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+        if (err) {
+            res.send(err);
+        }
+
+        res.json(dll); // return all email in JSON format
+    });
+});
+
+
+// Add email to subscribers list
+app.post('/api/dll', function (req, res) {
+
+    console.log("Email has been added...");
+
+    Dll.create({
+        date: req.body.date,
+        done: false
+    }, function (err, dll) {
+        if (err) {
+            res.send(err);
+            
+        }
+
+        // create and return all the groceries
+        Dll.find(function (err, dll) {
+            if (err)
+                res.send(err);
+            res.json(dll);
+        });
+    });
+
+});
+
+// Update a grocery Item
+app.put('/api/dll/:id', function (req, res) {
+    const dll = {
+        date: req.body.date
+    };
+    console.log("Updating item - ", req.params.id);
+    Dll.update({_id: req.params.id}, dll, function (err, raw) {
+        if (err) {
+            res.send(err);
+        }
+        res.send(raw);
+    });
+});
+
+
+// Delete a grocery Item
+app.delete('/api/dll/:id', function (req, res) {
+    Dll.remove({
+        _id: req.params.id
+    }, function (err, dll) {
+        if (err) {
+            console.error("Error deleting grocery ", err);
+        }
+        else {
+            Dll.find(function (err, dll) {
+                if (err) {
+                    res.send(err);
+                }
+                else {
+                    res.json(dll);
+                }
+            });
+        }
+    });
+});
+
+
+
+// Start app and listen on port 8080  
+app.listen(process.env.PORT || 8080);
+console.log("Dll server listening on port  - ", (process.env.PORT || 8080));
